@@ -1,0 +1,302 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Toys Corner | Leave Google Review</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Leave your Google Review for Toys Corner. We value your feedback and appreciate your support.">
+    <meta name="keywords" content="Toys Corner, Google Review, Toy Shop, Kids Toys">
+    <meta name="author" content="Toys Corner">
+    <meta name="robots" content="index,follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://yourwebsite.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Toys Corner Google Review">
+    <meta property="og:description" content="Share your experience with Toys Corner by leaving a Google Review.">
+    <meta property="og:image" content="images/og-image.png">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#ff6b00">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary:#ff6b00;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg,#fff8f0,#ffe6cc);
+            font-family: Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at top,#f8fafc,#e2e8f0);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* CENTER ICON */
+        .google-btn {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.3s;
+            animation: float 2.5s ease-in-out infinite;
+            margin: 0 auto;
+        }
+
+            .google-btn:hover {
+                transform: scale(1.05);
+                box-shadow: 0 25px 80px rgba(0,0,0,.25);
+            }
+
+            .google-btn i {
+                font-size: 70px;
+                background: conic-gradient( #4285F4, #DB4437, #F4B400, #0F9D58, #4285F4 );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+        /* FLOAT ANIMATION */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .text-label {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 700;
+            background: linear-gradient(90deg,#4285F4,#DB4437,#F4B400,#0F9D58);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .review-modal {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            background: var(--primary);
+            color: #fff;
+        }
+
+            .modal-header .btn-close {
+                filter: invert(1);
+                opacity: 1;
+            }
+
+
+        label {
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .stars {
+            display: flex;
+            gap: 8px;
+        }
+
+            .stars i {
+                font-size: 24px;
+                color: #ddd;
+                cursor: pointer;
+                transition: .2s;
+            }
+
+                .stars i.active {
+                    color: #ffb400;
+                }
+
+        .footer-powered {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            color: #666;
+            width: 100%;
+            text-align: center;
+        }
+
+            .footer-powered a {
+                text-decoration: none;
+                font-weight: 700;
+                color: var(--primary);
+            }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="text-center">
+
+        <div class="google-btn"
+            data-bs-toggle="modal"
+            data-bs-target="#reviewModal">
+
+            <i class="fa-brands fa-google"></i>
+
+        </div>
+
+        <div class="text-label">
+            Click to Leave Google Review
+        </div>
+
+    </div>
+
+    <!-- Toast -->
+
+    <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+
+        <div id="reviewToast"
+            class="toast text-bg-success border-0">
+
+            <div class="d-flex">
+
+                <div class="toast-body" id="toastMsg">
+                    Success
+                </div>
+
+                <button class="btn-close btn-close-white me-2 m-auto"
+                    data-bs-dismiss="toast">
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+
+    <div class="modal fade"
+        id="reviewModal"
+        tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content review-modal">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title">
+
+                        <i class="fa-solid fa-star me-2"></i>
+
+                        Leave Google Review
+
+                    </h5>
+
+                    <button class="btn-close"
+                        data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <label>Name</label>
+
+                    <input
+                        type="text"
+                        id="rName"
+                        class="form-control"
+                        placeholder="Enter your name">
+
+                    <label class="mt-3">
+                        Overall Rating
+
+                    </label>
+
+                    <div id="overallStars"
+                        class="stars">
+                    </div>
+
+                    <label class="mt-3">
+                        Review
+
+                    </label>
+
+                    <textarea
+                        id="reviewText"
+                        class="form-control"
+                        rows="7"
+                        readonly></textarea>
+
+                    <button
+                        id="submitReview"
+                        class="btn btn-success w-100 mt-3">
+                        Submit Review
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="footer-powered">
+        Powered by
+
+    <a href="https://abronixtechnologies.github.io/abronix-landing/"
+        target="_blank">Abronix Technologies
+
+    </a>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/review.js"></script>
+
+</body>
+</html>
