@@ -1,40 +1,10 @@
-
 document.addEventListener("DOMContentLoaded", () => {
 
     // ==========================
-    // Load AOS (with fallback)
+    // Loader
     // ==========================
-    function initAOS() {
-        if (typeof AOS !== "undefined") {
-            AOS.init({
-                duration: 1000,
-                once: true,
-                offset: 100,
-                easing: "ease-in-out"
-            });
-        } else {
-            console.warn("AOS failed to load. Showing content without animations.");
-document.querySelectorAll("[data-aos]").forEach(el => {
-    el.removeAttribute("data-aos");
-});
-}
-}
-
-if (typeof AOS === "undefined") {
-    const aosScript = document.createElement("script");
-    aosScript.src = "https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js";
-    aosScript.onload = initAOS;
-    aosScript.onerror = initAOS;
-    document.head.appendChild(aosScript);
-} else {
-    initAOS();
-}
-
-// ==========================
-// Loader
-// ==========================
-window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
+    window.addEventListener("load", () => {
+        const loader = document.getElementById("loader");
 if (loader) loader.style.display = "none";
 });
 
@@ -62,17 +32,17 @@ function openSidebar() {
     overlay?.classList.add("active");
 }
 
-function shutSidebar() {
+function closeSidebarFunc() {
     sidebar?.classList.remove("active");
     overlay?.classList.remove("active");
 }
 
 menuBtn?.addEventListener("click", openSidebar);
-closeSidebar?.addEventListener("click", shutSidebar);
-overlay?.addEventListener("click", shutSidebar);
+closeSidebar?.addEventListener("click", closeSidebarFunc);
+overlay?.addEventListener("click", closeSidebarFunc);
 
 document.querySelectorAll(".sidebar-menu a").forEach(item => {
-    item.addEventListener("click", shutSidebar);
+    item.addEventListener("click", closeSidebarFunc);
 });
 
 // ==========================
@@ -82,7 +52,8 @@ document.querySelectorAll(".sidebar-menu a").forEach(item => {
 
 if (scrollBtn) {
     window.addEventListener("scroll", () => {
-        scrollBtn.style.display = window.scrollY > 400 ? "flex" : "none";
+        scrollBtn.style.display =
+            window.scrollY > 400 ? "flex" : "none";
 });
 
 scrollBtn.addEventListener("click", () => {
@@ -97,16 +68,26 @@ scrollBtn.addEventListener("click", () => {
 // Active Nav + ScrollSpy
 // ==========================
     const sections = document.querySelectorAll("section[id]");
-    const desktopLinks = document.querySelectorAll("#navMenu .nav-link[data-section]");
-    const sidebarLinks = document.querySelectorAll("#sidebarMenu a[data-section]");
+    const desktopLinks = document.querySelectorAll(
+        "#navMenu .nav-link[data-section]"
+    );
+    const sidebarLinks = document.querySelectorAll(
+        "#sidebarMenu a[data-section]"
+    );
 
 function setActiveLink(id) {
     desktopLinks.forEach(link => {
-        link.classList.toggle("active", link.dataset.section === id);
+        link.classList.toggle(
+            "active",
+            link.dataset.section === id
+        );
 });
 
 sidebarLinks.forEach(link => {
-    link.classList.toggle("active", link.dataset.section === id);
+    link.classList.toggle(
+        "active",
+        link.dataset.section === id
+    );
 });
 }
 
@@ -132,6 +113,7 @@ sections.forEach(sec => spy.observe(sec));
 }
 
 setActiveLink("home");
+
 
 // ==========================
 // Gallery Lightbox
@@ -211,5 +193,6 @@ switch (e.key) {
 }
 });
 }
+
 
 });
