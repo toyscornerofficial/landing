@@ -1,8 +1,8 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 
 # Block private or unnecessary folders (optional)
 
 
 # Sitemap location (IMPORTANT)
-Sitemap: https://toyscorneranand.github.io/landing/sitemap.xml
+Sitemap: https://toyscornerofficial.github.io/landing/sitemap.xml
