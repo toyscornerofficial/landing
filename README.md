@@ -1,6 +1,6 @@
 # landing
 
-https://toyscorner.github.io/landing/
+https://toyscorneranand.github.io/landing/
 
 
 🧸 Toys Corner – Anand's Favourite Toy Store 🎁
@@ -28,7 +28,9 @@ Station Road, Anand, Gujarat 388001
 8487891759
 
 🌐 Follow Us
+
 Instagram: https://www.instagram.com/toyscornerofficial/
+
 Facebook: https://www.facebook.com/ToysCornerOfficial/
 
 ✨ Why Choose Toys Corner?
