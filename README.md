@@ -1,6 +1,6 @@
 # landing
 
-https://toyscorneranand.github.io/landing/
+https://toyscornerofficial.github.io/landing/
 
 
 🧸 Toys Corner – Anand's Favourite Toy Store 🎁
